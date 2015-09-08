@@ -1,8 +1,8 @@
-function [xcon, yagg] = aggregate(x, y, fun)
+function [xcon, yagg, yidxagg] = aggregate(x, y, fun)
 %AGGREGATE Aggregate values into cell array
 %
-% [xcon, yagg] = aggregate(x, y)
-% [xcon, yagg] = aggregate(x, y, fun)
+% [xcon, yagg, yidxagg] = aggregate(x, y)
+% [xcon, yagg, yidxagg] = aggregate(x, y, fun)
 %
 % This function groups together values of y, based on category values in x.
 % It performs more or less like accumaray(x,y,[a b]. @(x) {x}), except
@@ -11,19 +11,21 @@ function [xcon, yagg] = aggregate(x, y, fun)
 %
 % Input variables:
 %
-%   x:      n x 1 array, categories, can be either numeric or a cell array
-%           of strings 
+%   x:          n x 1 array, categories, can be either numeric or a cell
+%               array of strings  
 %
-%   y:      n x m array, values to be grouped
+%   y:          n x m array, values to be grouped
 %
-%   fun:    function handle. If included, this function is applied to the
-%           grouped values of y
+%   fun:        function handle. If included, this function is applied to
+%               the grouped values of y 
 %
 % Output variables:
 %
-%   xcon:   unique values of x
+%   xcon:       unique values of x
 %
-%   yagg:   cell array of y values corresponding to each x.
+%   yagg:       cell array of y values corresponding to each x.
+%
+%   yidxagg:    row indices of aggregated values
 
 % Copyright 2013 Kelly Kearney
 
