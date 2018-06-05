@@ -53,7 +53,7 @@
 % and Weight for each edge.  The output digraph |Gnew| will be identical to
 % |G| but with x, y, and BundleCompat properties added to the Edge table.  
 %
-% |Gnew = debundle(G, Name, Value, ...) adjusts the edge bundling
+% |Gnew = debundle(G, Name, Value, ...)| adjusts the edge bundling
 % calculation parameters.  See function help for a list of named
 % parameters.
 %

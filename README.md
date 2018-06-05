@@ -20,7 +20,7 @@ Please note that I am not a coauthor on this paper; I simply coded this Matlab v
 
 ## Contents
 
-
+            
 - Getting started        
 - Syntax        
 - Example        
@@ -67,7 +67,7 @@ divedgebundle-pkg/singlepatch
 `Gnew = debundle(G)` calculates bundled edge pathways based on the exisiting digraph `G`.  The Node table in `G` must include Name, x, and y properties for each node, and the Edge table in `G` must include EndNodes and Weight for each edge.  The output digraph `Gnew` will be identical to `G` but with x, y, and BundleCompat properties added to the Edge table.
 
 
-|Gnew = debundle(G, Name, Value, ...) adjusts the edge bundling calculation parameters.  See function help for a list of named parameters.
+`Gnew = debundle(G, Name, Value, ...)` adjusts the edge bundling calculation parameters.  See function help for a list of named parameters.
 
 
 `plotdeb(Gnew)` plots the edges of an edge-bundled digraph as color-transitioning patches with widths corresponding to bundle weight.
@@ -112,10 +112,10 @@ G = digraph(src, tar, ones(size(tar)))
 
 G = 
 
-digraph with properties:
+  digraph with properties:
 
-Edges: [14x2 table]
-Nodes: [12x1 table]
+    Edges: [14x2 table]
+    Nodes: [12x1 table]
 
 
 ```
@@ -141,45 +141,49 @@ G.Edges
 ```
 G Nodes table:
 
-ans = 
+ans =
 
-Name     x      y 
-____    ___    ___
+  12x3 table
 
-'0'     -50      0
-'5'      50    -50
-'3'      50    -30
-'1'     -50    -10
-'2'     -50    -20
-'4'      50    -40
-'3b'     50      0
-'1b'    -50    -40
-'4b'     50    -10
-'5b'     50    -20
-'0b'    -50    -30
-'2b'    -50    -50
+    Name     x      y 
+    ____    ___    ___
+
+    '0'     -50      0
+    '5'      50    -50
+    '3'      50    -30
+    '1'     -50    -10
+    '2'     -50    -20
+    '4'      50    -40
+    '3b'     50      0
+    '1b'    -50    -40
+    '4b'     50    -10
+    '5b'     50    -20
+    '0b'    -50    -30
+    '2b'    -50    -50
 
 G Edges table:
 
-ans = 
+ans =
 
-EndNodes      Weight
-____________    ______
+  14x2 table
 
-'0'     '5'     1     
-'5'     '0'     1     
-'5'     '2'     1     
-'3'     '0'     1     
-'3'     '1'     1     
-'4'     '2'     1     
-'3b'    '1b'    1     
-'1b'    '4b'    1     
-'4b'    '1b'    1     
-'4b'    '0b'    1     
-'4b'    '2b'    1     
-'5b'    '1b'    1     
-'0b'    '5b'    1     
-'2b'    '5b'    1     
+      EndNodes      Weight
+    ____________    ______
+
+    '0'     '5'       1   
+    '5'     '0'       1   
+    '5'     '2'       1   
+    '3'     '0'       1   
+    '3'     '1'       1   
+    '4'     '2'       1   
+    '3b'    '1b'      1   
+    '1b'    '4b'      1   
+    '4b'    '1b'      1   
+    '4b'    '0b'      1   
+    '4b'    '2b'      1   
+    '5b'    '1b'      1   
+    '0b'    '5b'      1   
+    '2b'    '5b'      1   
 
 
 ```
@@ -191,7 +195,7 @@ Here's the resulting digraph, depicted using Matlab's built-in graph plotting fu
 
 ```matlab
 h = plot(G, 'XData', G.Nodes.x, 'YData', G.Nodes.y, ...
-'NodeColor', 'r', 'MarkerSize', 8);
+    'NodeColor', 'r', 'MarkerSize', 8);
 axis equal;
 ```
 
@@ -228,24 +232,24 @@ G = debundle(G);
 
 ```
 Preprocessing...
-100% [=================================================>]   14/  14
-Elapsed time is 0.015872 seconds.
+ 100% [=================================================>]   14/  14
+ Elapsed time is 0.024743 seconds.
 Bundling...
-Pass 1
-100% [=================================================>] Pass 1: 29 of 29
-Elapsed time is 0.052424 seconds.
-Pass 2
-100% [=================================================>] Pass 2: 29 of 29
-Elapsed time is 0.107576 seconds.
-Pass 3
-100% [=================================================>] Pass 3: 29 of 29
-Elapsed time is 0.219979 seconds.
-Pass 4
-100% [=================================================>] Pass 4: 29 of 29
-Elapsed time is 0.436848 seconds.
-Pass 5
-100% [=================================================>] Pass 5: 29 of 29
-Elapsed time is 0.893494 seconds.
+ Pass 1
+ 100% [=================================================>] Pass 1: 29 of 29
+ Elapsed time is 0.047363 seconds.
+ Pass 2
+ 100% [=================================================>] Pass 2: 29 of 29
+ Elapsed time is 0.101606 seconds.
+ Pass 3
+ 100% [=================================================>] Pass 3: 29 of 29
+ Elapsed time is 0.213681 seconds.
+ Pass 4
+ 100% [=================================================>] Pass 4: 29 of 29
+ Elapsed time is 0.433725 seconds.
+ Pass 5
+ 100% [=================================================>] Pass 5: 29 of 29
+ Elapsed time is 0.884515 seconds.
 Postprocessing...
 Done
 
@@ -276,12 +280,12 @@ To report bugs, please submit [an issue](https://github.com/kakearney/divedgebun
 
 
 
-- your operating system
-- your version of Matlab and all relevant toolboxes (type `ver` at the Matlab command line to get this info)
-- code/data to reproduce the error or buggy behavior, and the full text of any error messages received
+  - your operating system
+  - your version of Matlab and all relevant toolboxes (type `ver` at the Matlab command line to get this info)
+  - code/data to reproduce the error or buggy behavior, and the full text of any error messages received
 
 Please also feel free to submit enhancement requests, or to send pull requests (via GitHub) for bug fixes or new features.
 
 
 
-<sub>[Published with MATLAB R2016b]("http://www.mathworks.com/products/matlab/")</sub>
+<sub>[Published with MATLAB R2018a]("http://www.mathworks.com/products/matlab/")</sub>
