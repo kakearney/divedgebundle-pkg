@@ -3,7 +3,7 @@
 
 
 Author: Kelly Kearney
-
+[![View Divided edge bundling in Matlab on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/67632-divided-edge-bundling-in-matlab)
 
 This repository includes the code for the `debundle.m` and `plotdeb.m` Matlab functions, along with all dependent functions required to run them.
 
